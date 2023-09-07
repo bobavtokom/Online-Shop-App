@@ -192,6 +192,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\andres-jasso-PqbL_mxmaUE-unsplash.jpg" />
     <Content Include="Images\domino-164_6wVEHfI-unsplash.jpg" />
+    <Content Include="Images\irene-kredenets-dwKiHoqqxk8-unsplash.jpg" />
+    <Content Include="Images\search-icon.png" />
     <Content Include="Images\usama-akram-kP6knT7tjn4-unsplash.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

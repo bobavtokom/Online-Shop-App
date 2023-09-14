@@ -20,5 +20,6 @@ namespace Ecommerce.Repository {
         Tbl_Entity GetFirstOrDefaultByParameter(Expression<Func<Tbl_Entity, bool>> wherePredict);
         IEnumerable<Tbl_Entity> GetListParameter(Expression<Func<Tbl_Entity, bool>> wherePredict);
         IEnumerable<Tbl_Entity> GetResultBySqlProcedure(string query, params object[] parameters);
+        IEnumerable<Tbl_Entity> GetRecordsToShow(int pageNumber, int pageSize, int currentPage,Expression<Func<Tbl_Entity,bool>> wherePredict,Expression<Func<Tbl_Entity,int>> orderByPredict);
     }
 }

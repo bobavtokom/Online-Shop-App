@@ -1,5 +1,7 @@
 ﻿using Ecommerce.DAL;
+using Ecommerce.Models;
 using Ecommerce.Repository;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +25,18 @@ namespace Ecommerce.Controllers
                 .ToList();
 
             return View(allCategories);
+        }
+        public ActionResult AddCategory() { 
+            return UpdateCategory(0);
+        }
+        public ActionResult UpdateCategory(int categoryId) {
+            CategoryDetail categoryDetails;
+            if(categoryId != null) {
+                categoryDetails = JsonConvert.DeserializeObject<CategoryDetail>(JsonConvert.SerializeObject(unitOfWork.GetRepositoryInstance<Tbl_Category>().GetFirstOrDefault(categoryId)));
+            } else {
+                categoryDetails = new CategoryDetail();
+            }
+            return View("UpdateCategory", categoryDetails);
         }
     }
 }

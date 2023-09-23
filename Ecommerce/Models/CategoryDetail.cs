@@ -9,7 +9,7 @@ namespace Ecommerce.Models {
     public class CategoryDetail {
         public int CategoryId { get; set; }
         [Required(ErrorMessage = "Category name required")]
-        [StringLength(100, ErrorMessage = "Minimum length is 5 and maximum 100 characters", MinimumLength =3)]
+        [StringLength(100, ErrorMessage = "Minimum length is 5 and maximum 100 characters", MinimumLength =5)]
         public string CategoryName { get; set; }
         public Nullable<bool> IsActive { get; set; }
         public Nullable<bool> IsDelete { get; set; }
@@ -17,7 +17,7 @@ namespace Ecommerce.Models {
     public class ProductDetail {
         public int ProductId { get; set; }
         [Required(ErrorMessage = "Product name required")]
-        [StringLength(100, ErrorMessage = "Minimum length is 5 and maximum 100 characters", MinimumLength = 3)]
+        [StringLength(100, ErrorMessage = "Minimum length is 5 and maximum 100 characters", MinimumLength = 5)]
         public string ProductName { get; set; }
         [Required]
         [Range(1, 50)]

@@ -1,0 +1,31 @@
+﻿@model Ecommerce.Models.CategoryDetail
+@{
+    ViewBag.Title = "UpdateCategory";
+    Layout = "~/Views/Shared/Admin_LayoutPage1.cshtml";
+}
+
+<div class="container-fluid px-4">
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+        <li class="breadcrumb-item active">Categories</li>
+        <li class="breadcrumb-item active">Add new Category</li>
+    </ol>
+    <div class="card mb-4">
+        <div class="card-body">
+            @Html.HiddenFor(m => m.CategoryId)
+            <div class="form-group">
+                <label class="control-label">Category name</label>
+                @Html.TextBoxFor(m => m.CategoryName, new{@class = "form-control", required = "required", autofocus = "autofocus"})
+            </div>
+        </div>
+    </div>
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-table me-1"></i>
+            Category details
+        </div>
+        <div class="card-body">
+            </div>
+        </div>
+    </div>
+

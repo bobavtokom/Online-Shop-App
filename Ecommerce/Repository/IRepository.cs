@@ -6,6 +6,7 @@ using System.Web;
 
 namespace Ecommerce.Repository {
     public interface IRepository<Tbl_Entity> where Tbl_Entity:class {
+        IEnumerable<Tbl_Entity>GetProduct();
         IEnumerable<Tbl_Entity>GetAllRecords();
         IQueryable<Tbl_Entity> GetAllRecordsIQueryable();
         int GetAllRecordCount();

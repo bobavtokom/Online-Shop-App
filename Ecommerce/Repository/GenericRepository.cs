@@ -27,6 +27,10 @@ namespace Ecommerce.Repository {
         public IEnumerable<Tbl_Entity> GetAllRecords() {
             return _dbSet.ToList();
         }
+        public IEnumerable<Tbl_Entity> GetProduct() {
+            return _dbSet.ToList();
+
+        }
 
         public IQueryable<Tbl_Entity> GetAllRecordsIQueryable() {
             return _dbSet;

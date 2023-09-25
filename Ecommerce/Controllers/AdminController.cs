@@ -38,5 +38,8 @@ namespace Ecommerce.Controllers
             }
             return View("UpdateCategory", categoryDetails);
         }
+        public ActionResult Product() { 
+            return View(unitOfWork.GetRepositoryInstance<Tbl_Product>().GetProduct()); 
+        }
     }
 }

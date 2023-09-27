@@ -31,14 +31,16 @@
             <tbody>
                 @{
                     foreach (var item in Model) {
-                        <tr>
-                            <td>@item.ProductName</td>
-                            <td><a href="#">Edit</a></td>
-                        </tr>
+                        int count = 1;
+                                <tr>
+                                    <td>@count</td>
+                                    <td>@item.ProductName</td>
+                                    <td><a href="#">Edit</a></td>
+                                </tr>
+                        count++;
                     }
                 }
             </tbody>
         </table>
     </div>
-</div>
 </div>

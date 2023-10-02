@@ -94,5 +94,9 @@ namespace Ecommerce.Repository {
         public void UpdateByWhereClause(Expression<Func<Tbl_Entity, bool>> wherePredict, Action<Tbl_Entity> ForEachPredict) {
             _dbSet.Where(wherePredict).ToList().ForEach(ForEachPredict);
         }
+
+        public object GetFirstOrDefault(object id) {
+            throw new NotImplementedException();
+        }
     }
 }

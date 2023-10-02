@@ -2,7 +2,7 @@
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="dbMyOnlineShoppingModelStoreContainer" CdmEntityContainer="dbMyOnlineShoppingEntities">
     <EntitySetMapping Name="Tbl_Cart">
-      <EntityTypeMapping TypeName="dbMyOnlineShoppingModel.Tbl_Cart">
+      <EntityTypeMapping TypeName="IsTypeOf(dbMyOnlineShoppingModel.Tbl_Cart)">
         <MappingFragment StoreEntitySet="Tbl_Cart">
           <ScalarProperty Name="CartId" ColumnName="CartId" />
           <ScalarProperty Name="ProductId" ColumnName="ProductId" />
@@ -12,7 +12,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Tbl_CartStatus">
-      <EntityTypeMapping TypeName="dbMyOnlineShoppingModel.Tbl_CartStatus">
+      <EntityTypeMapping TypeName="IsTypeOf(dbMyOnlineShoppingModel.Tbl_CartStatus)">
         <MappingFragment StoreEntitySet="Tbl_CartStatus">
           <ScalarProperty Name="CartStatusId" ColumnName="CartStatusId" />
           <ScalarProperty Name="CartStatus" ColumnName="CartStatus" />
@@ -20,7 +20,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Tbl_Category">
-      <EntityTypeMapping TypeName="dbMyOnlineShoppingModel.Tbl_Category">
+      <EntityTypeMapping TypeName="IsTypeOf(dbMyOnlineShoppingModel.Tbl_Category)">
         <MappingFragment StoreEntitySet="Tbl_Category">
           <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
           <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
@@ -30,7 +30,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Tbl_MemberRole">
-      <EntityTypeMapping TypeName="dbMyOnlineShoppingModel.Tbl_MemberRole">
+      <EntityTypeMapping TypeName="IsTypeOf(dbMyOnlineShoppingModel.Tbl_MemberRole)">
         <MappingFragment StoreEntitySet="Tbl_MemberRole">
           <ScalarProperty Name="MemberRoleID" ColumnName="MemberRoleID" />
           <ScalarProperty Name="memberId" ColumnName="memberId" />
@@ -39,7 +39,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Tbl_Members">
-      <EntityTypeMapping TypeName="dbMyOnlineShoppingModel.Tbl_Members">
+      <EntityTypeMapping TypeName="IsTypeOf(dbMyOnlineShoppingModel.Tbl_Members)">
         <MappingFragment StoreEntitySet="Tbl_Members">
           <ScalarProperty Name="MemberId" ColumnName="MemberId" />
           <ScalarProperty Name="FristName" ColumnName="FristName" />
@@ -54,9 +54,8 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Tbl_Product">
-      <EntityTypeMapping TypeName="dbMyOnlineShoppingModel.Tbl_Product">
+      <EntityTypeMapping TypeName="IsTypeOf(dbMyOnlineShoppingModel.Tbl_Product)">
         <MappingFragment StoreEntitySet="Tbl_Product">
-          <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="ProductId" ColumnName="ProductId" />
           <ScalarProperty Name="ProductName" ColumnName="ProductName" />
           <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
@@ -68,11 +67,12 @@
           <ScalarProperty Name="ProductImage" ColumnName="ProductImage" />
           <ScalarProperty Name="IsFeatured" ColumnName="IsFeatured" />
           <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Tbl_Roles">
-      <EntityTypeMapping TypeName="dbMyOnlineShoppingModel.Tbl_Roles">
+      <EntityTypeMapping TypeName="IsTypeOf(dbMyOnlineShoppingModel.Tbl_Roles)">
         <MappingFragment StoreEntitySet="Tbl_Roles">
           <ScalarProperty Name="RoleId" ColumnName="RoleId" />
           <ScalarProperty Name="RoleName" ColumnName="RoleName" />
@@ -80,7 +80,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Tbl_ShippingDetails">
-      <EntityTypeMapping TypeName="dbMyOnlineShoppingModel.Tbl_ShippingDetails">
+      <EntityTypeMapping TypeName="IsTypeOf(dbMyOnlineShoppingModel.Tbl_ShippingDetails)">
         <MappingFragment StoreEntitySet="Tbl_ShippingDetails">
           <ScalarProperty Name="ShippingDetailId" ColumnName="ShippingDetailId" />
           <ScalarProperty Name="MemberId" ColumnName="MemberId" />
@@ -96,7 +96,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Tbl_SlideImage">
-      <EntityTypeMapping TypeName="dbMyOnlineShoppingModel.Tbl_SlideImage">
+      <EntityTypeMapping TypeName="IsTypeOf(dbMyOnlineShoppingModel.Tbl_SlideImage)">
         <MappingFragment StoreEntitySet="Tbl_SlideImage">
           <ScalarProperty Name="SlideId" ColumnName="SlideId" />
           <ScalarProperty Name="SlideTitle" ColumnName="SlideTitle" />

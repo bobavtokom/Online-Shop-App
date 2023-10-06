@@ -89,6 +89,7 @@ namespace Ecommerce.Repository {
         public void Update(Tbl_Entity entity) {
             _dbSet.Attach(entity);
             _dbEntity.Entry(entity).State = EntityState.Modified;
+            _dbEntity.SaveChanges();
         }
 
         public void UpdateByWhereClause(Expression<Func<Tbl_Entity, bool>> wherePredict, Action<Tbl_Entity> ForEachPredict) {

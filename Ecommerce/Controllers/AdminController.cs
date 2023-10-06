@@ -44,6 +44,19 @@ namespace Ecommerce.Controllers
         public ActionResult ProductEdit(int productId) { 
             return View(unitOfWork.GetRepositoryInstance<Tbl_Product>().GetFirstOrDefault(productId)); 
         }
+        [HttpPost]
+        public ActionResult ProductEdit(Tbl_Product tbl) { 
+            unitOfWork.GetRepositoryInstance<Tbl_Product>().Update(tbl);
+            return RedirectToAction("Product");
+        }
+        public ActionResult ProductAdd(){
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ProductAdd(Tbl_Product tbl) {
+            unitOfWork.GetRepositoryInstance<Tbl_Product>().Add(tbl);
+            return RedirectToAction("Product");
+        }
 
     }
 }

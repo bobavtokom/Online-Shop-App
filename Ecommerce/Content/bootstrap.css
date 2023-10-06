@@ -124,6 +124,9 @@ textarea {
 button {
   overflow: visible;
 }
+.pull-right{
+    float: right;
+}
 button,
 select {
   text-transform: none;

@@ -10,9 +10,16 @@ using System.Web.Mvc;
 
 namespace Ecommerce.Controllers
 {
-    public class AdminController : Controller
-    {
+    public class AdminController : Controller {
         public GenericUnitOfWork unitOfWork = new GenericUnitOfWork();
+        public List<SelectListItem> GetCategory(){
+            List<SelectListItem> list = new List<SelectListItem>();
+            var category = unitOfWork.GetRepositoryInstance<Tbl_Category>().GetAllRecords();
+            foreach (var item in category) {
+                list.Add(new SelectListItem{Value = item.CategoryId.ToString(), Text = item.CategoryName});
+            }
+            return list;
+            }
         // GET: Admin
         public ActionResult Dashboard()
         {
@@ -41,19 +48,26 @@ namespace Ecommerce.Controllers
         public ActionResult Product() { 
             return View(unitOfWork.GetRepositoryInstance<Tbl_Product>().GetProduct()); 
         }
-        public ActionResult ProductEdit(int productId) { 
+        public ActionResult ProductEdit(int productId) {
+
+            ViewBag.CetegoryList = GetCategory();
             return View(unitOfWork.GetRepositoryInstance<Tbl_Product>().GetFirstOrDefault(productId)); 
         }
         [HttpPost]
         public ActionResult ProductEdit(Tbl_Product tbl) { 
+
+            tbl.ModifiedDate = DateTime.Now;
             unitOfWork.GetRepositoryInstance<Tbl_Product>().Update(tbl);
             return RedirectToAction("Product");
         }
         public ActionResult ProductAdd(){
+            ViewBag.CetegoryList = GetCategory();
             return View();
         }
         [HttpPost]
         public ActionResult ProductAdd(Tbl_Product tbl) {
+
+            tbl.CreatedDate = DateTime.Now; 
             unitOfWork.GetRepositoryInstance<Tbl_Product>().Add(tbl);
             return RedirectToAction("Product");
         }

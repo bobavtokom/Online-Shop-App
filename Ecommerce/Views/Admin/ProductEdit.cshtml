@@ -14,7 +14,7 @@
         <h4>Product</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    @Html.HiddenFor(model => model.ProductId, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.HiddenFor(model => model.ProductId, new { htmlAttributes = new { @class = "form-control" } })
         <div class="col-md-6">
             <div class="form-group">
                 @Html.LabelFor(model => model.ProductId, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -32,11 +32,15 @@
                 </div>
             </div>
         </div>
+        @{
+            List<SelectListItem> data = ViewBag.CetegoryList;
+        }
         <div class="col-md-6">
             <div class="form-group">
                 @Html.LabelFor(model => model.CategoryId, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.CategoryId, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.DropDownListFor(model => model.CategoryId, data, "--- Select ---", new { @class = "form-control" })
+
                     @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -139,7 +143,7 @@
                 </div>
             </div>
         </div>
-        </div>
+    </div>
 
     }
 

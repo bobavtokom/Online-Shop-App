@@ -1,5 +1,8 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿
+@model Ecommerce.Models.Home.HomeIndexViewModel
+    
+@{ 
+ViewBag.Title = "Home Page";
 }
 
 
@@ -60,16 +63,30 @@
     </div>
 </div>
 <div class="row product-container">
+    @foreach (var item in Model.ListOfProducts) {
+
         <div class="col-md-3 col-sm-3 col-xs-6 ">
-    <div class="thumbnail product-item" style="height:300px;"> 
-        <img class="img-responsive" title="View details" style="cursor:pointer;height:160px;width:100%;"
-        src="~/Images/irene-kredenets-dwKiHoqqxk8-unsplash.jpg" />
-        <div class="caption">
-            <h5>Product Name</h5>
-            <p>300.00 den</p>
-            <p>Available</p>
-            <div class="product-item-badge">New</div>
+            <div class="thumbnail product-item" style="height:300px;">
+                <img class="img-responsive" title="View details" style="cursor:pointer;height:160px;width:100%;"
+                     src="~/Images/irene-kredenets-dwKiHoqqxk8-unsplash.jpg" />
+                <div class="caption">
+                    <h5>@item.ProductName</h5>
+                    <p>@item.Price</p>
+                    <p>@if (item.Quantity > 0) {
+                        <p>Available</p>
+                    } else {
+                        <p>Not Available</p>
+                    }</p>
+                <div class="product-item-badge">
+                    <p>@if (item.IsFeatured == true) {
+                        <p>New</p>
+                    } else {
+                        <p>Old</p>
+                    }
+                </div>
+                </div>
+            </div>
         </div>
-    </div>
-  </div>
+    }
+
 </div>

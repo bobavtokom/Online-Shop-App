@@ -49,7 +49,8 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.IsActive, new { htmlAttributes = new { @class = "form-control" } })
+
+                    @Html.CheckBox("IsActive")
                     @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -58,20 +59,12 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.IsDelete, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.IsDelete, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.CheckBox("IsDelete")
                     @Html.ValidationMessageFor(model => model.IsDelete, "", new { @class = "text-danger" })
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                @Html.LabelFor(model => model.CreatedDate, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.CreatedDate, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.CreatedDate, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
+        @Html.HiddenFor(model => model.CreatedDate)
         <div class="col-md-6">
 
             <div class="form-group">
@@ -109,7 +102,8 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.IsFeatured, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.IsFeatured, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.CheckBox("IsFeatured")
+
                     @Html.ValidationMessageFor(model => model.IsFeatured, "", new { @class = "text-danger" })
                 </div>
             </div>

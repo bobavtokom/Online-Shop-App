@@ -48,6 +48,17 @@ namespace Ecommerce.Controllers
         public ActionResult Product() { 
             return View(unitOfWork.GetRepositoryInstance<Tbl_Product>().GetProduct()); 
         }
+        public ActionResult CategoryEdit(int categoryId) {
+
+            ViewBag.CetegoryList = GetCategory();
+            return View(unitOfWork.GetRepositoryInstance<Tbl_Category>().GetFirstOrDefault(categoryId));
+        }
+        [HttpPost]
+        public ActionResult CategoryEdit(Tbl_Category tbl) {
+
+            unitOfWork.GetRepositoryInstance<Tbl_Category>().Update(tbl);
+            return RedirectToAction("Categories");
+        }
         public ActionResult ProductEdit(int productId) {
 
             ViewBag.CetegoryList = GetCategory();

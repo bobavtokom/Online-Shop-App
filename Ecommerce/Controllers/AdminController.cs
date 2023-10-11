@@ -65,7 +65,16 @@ namespace Ecommerce.Controllers
             return View(unitOfWork.GetRepositoryInstance<Tbl_Product>().GetFirstOrDefault(productId)); 
         }
         [HttpPost]
-        public ActionResult ProductEdit(Tbl_Product tbl) { 
+        public ActionResult ProductEdit(Tbl_Product tbl, HttpPostedFileBase file) {
+
+            string picture = null;
+            if (file != null) {
+                picture = System.IO.Path.GetFileName(file.FileName);
+                string path = System.IO.Path.Combine(
+                    Server.MapPath("~ProductImage/"), picture);
+                file.SaveAs(path);
+            }
+            tbl.ProductImage = file != null? picture: tbl.ProductImage;
 
             tbl.ModifiedDate = DateTime.Now;
             unitOfWork.GetRepositoryInstance<Tbl_Product>().Update(tbl);
@@ -76,8 +85,15 @@ namespace Ecommerce.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult ProductAdd(Tbl_Product tbl) {
-
+        public ActionResult ProductAdd(Tbl_Product tbl, HttpPostedFileBase file) {
+            string picture = null;
+            if(file != null) {
+                picture = System.IO.Path.GetFileName(file.FileName);
+                string path = System.IO.Path.Combine(
+                    Server.MapPath("~/ProductImage/"),picture);
+                file.SaveAs(path);
+            }
+            tbl.ProductImage = picture;
             tbl.CreatedDate = DateTime.Now; 
             unitOfWork.GetRepositoryInstance<Tbl_Product>().Add(tbl);
             return RedirectToAction("Product");

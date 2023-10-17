@@ -106,3 +106,7 @@ C:\Users\Boban\source\repos\EcommerceApp\Ecommerce\obj\Debug\Ecommerce.csproj.Co
 C:\Users\Boban\source\repos\EcommerceApp\Ecommerce\obj\Debug\Ecommerce.csproj.CopyComplete
 C:\Users\Boban\source\repos\EcommerceApp\Ecommerce\obj\Debug\Ecommerce.dll
 C:\Users\Boban\source\repos\EcommerceApp\Ecommerce\obj\Debug\Ecommerce.pdb
+C:\Users\Boban\source\repos\EcommerceApp\Ecommerce\bin\PagedList.dll
+C:\Users\Boban\source\repos\EcommerceApp\Ecommerce\bin\PagedList.Mvc.dll
+C:\Users\Boban\source\repos\EcommerceApp\Ecommerce\bin\PagedList.xml
+C:\Users\Boban\source\repos\EcommerceApp\Ecommerce\bin\PagedList.Mvc.xml

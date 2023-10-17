@@ -1,6 +1,7 @@
 ﻿
 @model Ecommerce.Models.Home.HomeIndexViewModel
-    
+@using PagedList;
+@using PagedList.Mvc;
 @{ 
 ViewBag.Title = "Home Page";
 }
@@ -91,5 +92,8 @@ ViewBag.Title = "Home Page";
             </div>
         </div>
     }
+    <div class="container">
+        @Html.PagedListPager(Model.ListOfProducts, page => Url.Action("Index", new {page, search = Request.QueryString["string"] }))
+    </div>
 
 </div>

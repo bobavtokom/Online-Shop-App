@@ -76,8 +76,13 @@ ViewBag.Title = "Home Page";
                 <div class="caption">
                     <h5>@item.ProductName</h5>
                     <p>@item.Price</p>
-                    <p>@if (item.Quantity > 0) {
-                        <p>Available</p>
+                    <p>
+                        @if (item.Quantity > 0) {
+                            using (Html.BeginForm("AddToCart", "Home", FormMethod.Post, new { productId = item.ProductId})) {
+
+                    <button type="submit"><a class="pull-right" href="#"><i class="fa fa-shopping-cart"></i></a></button>
+                    }
+<p>Available</p>
                     } else {
                         <p>Not Available</p>
                     }</p>

@@ -78,14 +78,14 @@ ViewBag.Title = "Home Page";
                     <p>@item.Price</p>
                     <p>
                         @if (item.Quantity > 0) {
-                            using (Html.BeginForm("AddToCart", "Home", FormMethod.Post, new { productId = item.ProductId})) {
+                            using (Html.BeginForm("AddToCart", "Home", new { productId = item.ProductId}, FormMethod.Post)) {
 
-                    <button type="submit"><a class="pull-right" href="#"><i class="fa fa-shopping-cart"></i></a></button>
+                    <button class="pull-right" href="#" type="submit"><i class="fa fa-shopping-cart"></i></button>
                     }
 <p>Available</p>
                     } else {
                         <p>Not Available</p>
-                    }</p>
+                    }
                 <div class="product-item-badge">
                     <p>@if (item.IsFeatured == true) {
                         <p>New</p>

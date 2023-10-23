@@ -16,14 +16,25 @@ namespace Ecommerce.Controllers {
         }
 
         public ActionResult AddToCart(int productId) {
-            var cart = new List<Item>();
+            if (Session["Cart"] == null) {
+
+            List<Item> cart = new List<Item>();
             var product = context.Tbl_Product.Find(productId);
             cart.Add(new Item (){
-                product = product,
+                Product = product,
                 Quantity = 1
             });
             Session["Cart"] = cart;
-            return View();
+            } else {
+                List<Item> cart = (List<Item>)Session["Cart"];
+                var product = context.Tbl_Product.Find(productId);
+                cart.Add(new Item() {
+                    Product = product,
+                    Quantity = 1
+                });
+                Session["Cart"] = cart;
+            }
+            return Redirect ("Index");
         }
 
         public ActionResult Contact() {

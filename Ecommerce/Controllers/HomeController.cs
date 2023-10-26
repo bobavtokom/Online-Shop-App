@@ -36,7 +36,17 @@ namespace Ecommerce.Controllers {
             }
             return Redirect ("Index");
         }
+        public ActionResult RemoveFromCart (int productId) {
 
+            List<Item> cart = (List<Item>)Session["Cart"];
+            foreach (var item in cart) {
+                if (item.Product.ProductId == productId) {
+                cart.Remove(item);}
+                break;
+            }
+            Session["Cart"] = cart;
+            return Redirect ("Index");
+        }
         public ActionResult Contact() {
             ViewBag.Message = "Your contact page.";
 

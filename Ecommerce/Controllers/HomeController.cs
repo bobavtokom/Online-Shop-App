@@ -28,10 +28,27 @@ namespace Ecommerce.Controllers {
             } else {
                 List<Item> cart = (List<Item>)Session["Cart"];
                 var product = context.Tbl_Product.Find(productId);
+                foreach (var item in cart) {
+                    if(item.Product.ProductId == productId) {
+
+                int prevQuantity = item.Quantity;
+                    cart.Remove(item);
+
                 cart.Add(new Item() {
+
                     Product = product,
-                    Quantity = 1
+                    Quantity = prevQuantity + 1
                 });
+                        break;
+                    } else {
+                        cart.Add(new Item() {
+
+                            Product = product,
+                            Quantity = 1
+                        }) ;
+                    }
+
+                }
                 Session["Cart"] = cart;
             }
             return Redirect ("Index");
